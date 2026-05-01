@@ -80,7 +80,7 @@ function PostModal({
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.18 }}
-        className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+        className="fixed inset-0 z-9999 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
         onClick={onClose}
       >
         <motion.div
@@ -93,7 +93,7 @@ function PostModal({
           className="relative w-full max-w-md bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl border border-zinc-100 dark:border-zinc-800 overflow-hidden"
         >
           {/* Accent */}
-          <div className="h-0.5 w-full bg-gradient-to-r from-emerald-400/80 via-teal-400/50 to-transparent" />
+          <div className="h-0.5 w-full bg-linear-to-r from-emerald-400/80 via-teal-400/50 to-transparent" />
 
           {/* Close button */}
           <button
@@ -169,7 +169,7 @@ export default function ConfessionCard(props: ConfessionCardProps) {
         style={{ aspectRatio: "1 / 1" }}
       >
         {/* Accent line */}
-        <div className="h-0.5 w-full bg-gradient-to-r from-emerald-400/70 via-teal-400/40 to-transparent" />
+        <div className="h-0.5 w-full bg-linear-to-r from-emerald-400/70 via-teal-400/40 to-transparent" />
 
         {/* Inner layout — fills the square */}
         <div className="absolute inset-0 top-0.5 flex flex-col p-4 gap-2">

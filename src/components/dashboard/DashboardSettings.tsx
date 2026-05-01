@@ -103,7 +103,7 @@ export function DashboardSettings() {
     setIsSubmitting(true);
     
     // Upload to clerk if there's a custom file
-    if (customFile) {
+    if (customFile && clerkUser) {
       try {
         await clerkUser.setProfileImage({ file: customFile });
       } catch (err) {

@@ -12,7 +12,7 @@ export default async function Home() {
       <div className="flex flex-col items-center text-center pt-16 pb-14 gap-4">
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-zinc-900 dark:text-zinc-100 leading-[1.08]">
           The Wall of<br />
-          <span className="bg-gradient-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-emerald-500 to-teal-500 bg-clip-text text-transparent">
             Thoughts
           </span>
         </h1>
