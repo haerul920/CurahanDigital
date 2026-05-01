@@ -1,0 +1,121 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+/* Tell Tailwind v4 to use .dark class strategy (for next-themes compatibility) */
+@variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    /* Light Mode — Clean White / Soft Green tint */
+    --background: 150 20% 97%;
+    --foreground: 160 30% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 160 30% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 30% 8%;
+
+    --primary: 150 55% 40%; /* Emerald */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 150 20% 92%;
+    --secondary-foreground: 160 30% 15%;
+
+    --muted: 150 15% 92%;
+    --muted-foreground: 160 20% 40%;
+
+    --accent: 195 70% 45%; /* Cyan/Blue Accent */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 150 15% 85%;
+    --input: 150 15% 88%;
+    --ring: 150 55% 40%;
+
+    --radius: 0.75rem;
+
+    --chart-1: 150 55% 40%;
+    --chart-2: 195 70% 45%;
+    --chart-3: 170 70% 38%;
+    --chart-4: 220 65% 55%;
+    --chart-5: 140 55% 50%;
+  }
+
+  .dark {
+    --background: 160 30% 3%;
+    --foreground: 160 20% 98%;
+
+    --card: 160 30% 4%;
+    --card-foreground: 160 20% 98%;
+
+    --popover: 160 30% 4%;
+    --popover-foreground: 160 20% 98%;
+
+    --primary: 150 60% 50%;
+    --primary-foreground: 160 30% 5%;
+
+    --secondary: 160 20% 10%;
+    --secondary-foreground: 160 20% 98%;
+
+    --muted: 160 20% 10%;
+    --muted-foreground: 160 20% 70%;
+
+    --accent: 195 80% 50%;
+    --accent-foreground: 160 30% 5%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 160 20% 12%;
+    --input: 160 20% 12%;
+    --ring: 150 60% 50%;
+  }
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  *::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+  html {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white border border-zinc-200 dark:bg-zinc-900/50 dark:border-zinc-800;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  .glass-nav {
+    @apply bg-white/80 border-b border-zinc-200 backdrop-blur-md dark:bg-zinc-950/80 dark:border-zinc-800;
+  }
+}
+
+/* ── View Transitions: disable default cross-fade, let JS clip-path run ── */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 2147483646;
+}
