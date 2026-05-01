@@ -41,7 +41,7 @@ export interface Database {
             isOneToOne: true;
             referencedRelation: "users";
             referencedColumns: ["id"];
-          }
+          },
         ];
       };
       curhatwall_posts: {
@@ -49,7 +49,13 @@ export interface Database {
           id: number;
           user_id: string;
           content: string;
-          category: "Academic" | "Romance" | "Horror" | "Random" | "Career";
+          category:
+            | "Academic"
+            | "Romance"
+            | "Horror"
+            | "Random"
+            | "Career"
+            | "general";
           background_color: string;
           is_anonymous: boolean;
           created_at: string;
@@ -58,7 +64,13 @@ export interface Database {
           id?: number;
           user_id: string;
           content: string;
-          category: "Academic" | "Romance" | "Horror" | "Random" | "Career";
+          category:
+            | "Academic"
+            | "Romance"
+            | "Horror"
+            | "Random"
+            | "Career"
+            | "general";
           background_color?: string;
           is_anonymous?: boolean;
           created_at?: string;
@@ -79,7 +91,7 @@ export interface Database {
             isOneToOne: false;
             referencedRelation: "curhatwall_profiles";
             referencedColumns: ["id"];
-          }
+          },
         ];
       };
       curhatwall_likes: {
@@ -115,7 +127,7 @@ export interface Database {
             isOneToOne: false;
             referencedRelation: "curhatwall_profiles";
             referencedColumns: ["id"];
-          }
+          },
         ];
       };
       curhatwall_comments: {
@@ -154,7 +166,7 @@ export interface Database {
             isOneToOne: false;
             referencedRelation: "curhatwall_profiles";
             referencedColumns: ["id"];
-          }
+          },
         ];
       };
     };
